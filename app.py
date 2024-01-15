@@ -71,45 +71,39 @@ def process_and_save_html(
         f.write(str(soup))
 
 
+
 @app.route('/birth_chart')
 def birth_chart():
-    # Logic for rendering 'birth-chart.html'
     return send_from_directory(directory='/tmp', path='birth-chart.html')
 
 @app.route('/ashtakavarga')
 def ashtakavarga():
-    # Logic for rendering 'ashtakavarga.php.html'
-    return render_template('ashtakavarga.php.html')
+    return send_from_directory(directory='/tmp', path='ashtakavarga.php.html')
 
 @app.route('/navamsa_chart')
 def navamsa_chart():
-    # Logic for rendering 'navamsa-chart.php.html'
-    return render_template('navamsa-chart.php.html')
+    return send_from_directory(directory='/tmp', path='navamsa-chart.php.html')
 
 @app.route('/manglik')
 def manglik():
-    # Logic for rendering 'manglik.php.html'
-    return render_template('manglik.php.html')
+    return send_from_directory(directory='/tmp', path='manglik.php.html')
 
 @app.route('/panchang_predictions')
 def panchang_predictions():
-    # Logic for rendering 'panchang-predictions.html'
-    return render_template('panchang-predictions.html')
+    return send_from_directory(directory='/tmp', path='panchang-predictions.html')
 
 @app.route('/dasha')
 def dasha():
-    # Logic for rendering 'dasha.html'
-    return render_template('dasha.html')
+    return send_from_directory(directory='/tmp', path='dasha.html')
 
 @app.route('/nakshatra_finder')
 def nakshatra_finder():
-    # Logic for rendering 'nakshatra-finder.html'
-    return render_template('nakshatra-finder.html')
+    return send_from_directory(directory='/tmp', path='nakshatra-finder.html')
 
 @app.route('/varga_chart')
 def varga_chart():
-    # Logic for rendering 'varga-chart.html'
-    return render_template('varga-chart.html')
+    return send_from_directory(directory='/tmp', path='varga-chart.html')
+
 
 
 
