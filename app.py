@@ -71,7 +71,7 @@ def process_and_save_html(
         f.write(str(soup))
 
 
-@app.route('/birth-chart')
+@app.route('/birth_chart')
 def birth_chart():
     # Logic for rendering 'birth-chart.html'
     return send_from_directory(directory='/tmp', filename='birth-chart.html')
@@ -81,7 +81,7 @@ def ashtakavarga():
     # Logic for rendering 'ashtakavarga.php.html'
     return render_template('ashtakavarga.php.html')
 
-@app.route('/navamsa-chart')
+@app.route('/navamsa_chart')
 def navamsa_chart():
     # Logic for rendering 'navamsa-chart.php.html'
     return render_template('navamsa-chart.php.html')
@@ -91,7 +91,7 @@ def manglik():
     # Logic for rendering 'manglik.php.html'
     return render_template('manglik.php.html')
 
-@app.route('/panchang-predictions')
+@app.route('/panchang_predictions')
 def panchang_predictions():
     # Logic for rendering 'panchang-predictions.html'
     return render_template('panchang-predictions.html')
@@ -101,12 +101,12 @@ def dasha():
     # Logic for rendering 'dasha.html'
     return render_template('dasha.html')
 
-@app.route('/nakshatra-finder')
+@app.route('/nakshatra_finder')
 def nakshatra_finder():
     # Logic for rendering 'nakshatra-finder.html'
     return render_template('nakshatra-finder.html')
 
-@app.route('/varga-chart')
+@app.route('/varga_chart')
 def varga_chart():
     # Logic for rendering 'varga-chart.html'
     return render_template('varga-chart.html')
