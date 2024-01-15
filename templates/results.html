@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Page</title>
+    <style>
+        body {
+            background-color: #fff;
+            /* White background */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            /* Green background */
+            color: #fff;
+            /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            /* Remove default link underline */
+        }
+
+        .button:hover {
+            background-color: #2d60e2;
+            /* Darker green on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-container">
+        <img src="{{ url_for('static', filename='ganesh.jpg') }}" alt="Ganesh" />
+        <div class="button-container">
+            <a href="{{ url_for('static', filename='birth-chart.html') }}" class="button"><b>ராசி கட்டம்</b></a>
+            <a href="{{ url_for('static', filename='panchang-predictions.html') }}" class="button"><b>பஞ்சாங்கம்</b></a>
+            <a href="{{ url_for('static', filename='navamsa-chart.php.html') }}" class="button"><b>நவாம்ச கட்டம்
+                </b></a>
+            <a href="{{ url_for('static', filename='dasha.html') }}" class="button"><b>திசை-புத்தி</b></a>
+            <a href="{{ url_for('static', filename='varga-chart.html') }}" class="button"><b>வர்க்க கட்டங்கள்</b></a>
+            <a href="{{ url_for('static', filename='ashtakavarga.php.html') }}" class="button"><b>அஷ்டகவர்கம்
+                    கட்டம்</b></a>
+            <a href="{{ url_for('static', filename='manglik.php.html') }}" class="button"><b>செவ்வாய் தோஷம்</b></a>
+            <a href="{{ url_for('static', filename='nakshatra-finder.html') }}" class="button"><b>நட்சத்திரம்</b></a>
+        </div>
+    </div>
+</body>
+
+</html>
