@@ -63,6 +63,7 @@ def process_and_save_html(
 
     # Specify the output filename
     output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
+    print('>>>>>>>>>>>',output_filename)
     with open(output_filename, "w", encoding="utf-8") as f:
         f.write(str(soup))
 
