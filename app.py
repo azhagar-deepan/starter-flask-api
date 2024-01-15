@@ -55,15 +55,16 @@ def process_and_save_html(
             )
             img_tag["src"] = complete_url
 
-   output_directory = os.path.join("templates")
+   
     
     # Ensure that the output directory exists
-   os.makedirs(output_directory, exist_ok=True)
-    
-    # Specify the output filename
-   output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
-   print('>>>>>>>>>>>',output_filename)
-    with open(output_filename, "w", encoding="utf-8") as f:
+    output_directory = os.path.join("templates")   
+    os.makedirs(output_directory, exist_ok=True)
+        
+        # Specify the output filename
+    output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
+    print('>>>>>>>>>>>',output_filename)
+    with open(output_filename, "w", encoding="utf-8") as f
         f.write(str(soup))
 
 
