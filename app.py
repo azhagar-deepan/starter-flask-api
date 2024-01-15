@@ -74,7 +74,7 @@ def process_and_save_html(
 @app.route('/birth_chart')
 def birth_chart():
     # Logic for rendering 'birth-chart.html'
-    return send_from_directory(directory='/tmp', filename='birth-chart.html')
+    return send_from_directory(directory='/tmp', path='birth-chart.html')
 
 @app.route('/ashtakavarga')
 def ashtakavarga():
