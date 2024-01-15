@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 import os
 
-app = Flask(__name__, static_folder='tmp/static')
+app = Flask(__name__)
 
 
 def process_and_save_html(
@@ -55,17 +55,59 @@ def process_and_save_html(
             )
             img_tag["src"] = complete_url
 
-    # Specify the desired output directory (use a different directory, e.g., 'generated_files')
-    output_directory = os.path.join("/tmp", "static")
-
+   output_directory = os.path.join("templates")
+    
     # Ensure that the output directory exists
-    os.makedirs(output_directory, exist_ok=True)
-
+   os.makedirs(output_directory, exist_ok=True)
+    
     # Specify the output filename
-    output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
-    print('>>>>>>>>>>>',output_filename)
+   output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
+   print('>>>>>>>>>>>',output_filename)
     with open(output_filename, "w", encoding="utf-8") as f:
         f.write(str(soup))
+
+
+@app.route('/birth-chart')
+def birth_chart():
+    # Logic for rendering 'birth-chart.html'
+    return render_template('birth-chart.html')
+
+@app.route('/ashtakavarga')
+def ashtakavarga():
+    # Logic for rendering 'ashtakavarga.php.html'
+    return render_template('ashtakavarga.php.html')
+
+@app.route('/navamsa-chart')
+def navamsa_chart():
+    # Logic for rendering 'navamsa-chart.php.html'
+    return render_template('navamsa-chart.php.html')
+
+@app.route('/manglik')
+def manglik():
+    # Logic for rendering 'manglik.php.html'
+    return render_template('manglik.php.html')
+
+@app.route('/panchang-predictions')
+def panchang_predictions():
+    # Logic for rendering 'panchang-predictions.html'
+    return render_template('panchang-predictions.html')
+
+@app.route('/dasha')
+def dasha():
+    # Logic for rendering 'dasha.html'
+    return render_template('dasha.html')
+
+@app.route('/nakshatra-finder')
+def nakshatra_finder():
+    # Logic for rendering 'nakshatra-finder.html'
+    return render_template('nakshatra-finder.html')
+
+@app.route('/varga-chart')
+def varga_chart():
+    # Logic for rendering 'varga-chart.html'
+    return render_template('varga-chart.html')
+
+
 
 def foo(formdata):
     formaction_paths = [
