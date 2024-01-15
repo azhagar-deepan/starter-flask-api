@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='tmp/static',)
 
 
 def process_and_save_html(
@@ -56,7 +56,7 @@ def process_and_save_html(
             img_tag["src"] = complete_url
 
     # Specify the desired output directory (use a different directory, e.g., 'generated_files')
-    output_directory = os.path.join("/tmp", "generated_files")
+    output_directory = os.path.join("/tmp", "static")
 
     # Ensure that the output directory exists
     os.makedirs(output_directory, exist_ok=True)
