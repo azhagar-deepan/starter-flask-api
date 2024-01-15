@@ -54,20 +54,20 @@ def process_and_save_html(
                 "https://www.prokerala.com/", relative_path
             )
             img_tag["src"] = complete_url
-    # Get the directory of the current script
-    script_directory = os.path.dirname(os.path.abspath(__file__))
+  # Get the directory of the current script
+script_directory = os.path.dirname(os.path.abspath(__file__))
 
-    # Specify the desired output directory (in this case, 'static' within the project directory)
-    output_directory = os.path.join(script_directory, "static")
+# Specify the desired output directory (use '/tmp' instead of 'static' within the project directory)
+output_directory = "/tmp"
 
-    # Ensure that the output directory exists
-    os.makedirs(output_directory, exist_ok=True)
+# Ensure that the output directory exists
+os.makedirs(output_directory, exist_ok=True)
 
-    # Specify the output filename
-    output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
+# Specify the output filename within the '/tmp' directory
+output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
 
-    with open(output_filename, "w", encoding="utf-8") as f:
-        f.write(str(soup))
+with open(output_filename, "w", encoding="utf-8") as f:
+    f.write(str(soup))
 
 
 def foo(formdata):
