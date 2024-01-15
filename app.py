@@ -64,7 +64,7 @@ output_directory = "/tmp"
 os.makedirs(output_directory, exist_ok=True)
 
 # Specify the output filename within the '/tmp' directory
-output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
+output_filename = os.path.join(output_directory, output_filename)
 
 with open(output_filename, "w", encoding="utf-8") as f:
     f.write(str(soup))
