@@ -1,6 +1,6 @@
 # prompt: need flask showing the home page
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import requests
 import urllib.parse
 import urllib.request
@@ -55,14 +55,17 @@ def process_and_save_html(
             )
             img_tag["src"] = complete_url
 
-   
+
+
+    # Specify the desired output directory (use a different directory, e.g., 'generated_files')
+    output_directory = os.path.join("/tmp")
     
     # Ensure that the output directory exists
-    output_directory = os.path.join("templates")   
     os.makedirs(output_directory, exist_ok=True)
-        
-        # Specify the output filename
+    
+    # Specify the output filename
     output_filename = os.path.join(output_directory, output_filename.replace("#", ""))
+    
     print('>>>>>>>>>>>',output_filename)
     with open(output_filename, "w", encoding="utf-8") as f:
         f.write(str(soup))
@@ -71,7 +74,7 @@ def process_and_save_html(
 @app.route('/birth-chart')
 def birth_chart():
     # Logic for rendering 'birth-chart.html'
-    return render_template('birth-chart.html')
+    return send_from_directory(directory='/tmp', filename='birth-chart.html')
 
 @app.route('/ashtakavarga')
 def ashtakavarga():
