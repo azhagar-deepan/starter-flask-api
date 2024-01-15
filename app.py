@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 import os
 
-app = Flask(__name__, static_folder='tmp/static',)
+app = Flask(__name__, static_folder='tmp/static')
 
 
 def process_and_save_html(
